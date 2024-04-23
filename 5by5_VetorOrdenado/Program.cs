@@ -27,7 +27,7 @@ do
     }
 
     // implementação de Bubble Sort
-    for (int i = 0; i < size; i++)
+    /*for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size - 1; j++)
         {
@@ -35,6 +35,20 @@ do
             {
                 aux = ordenado[j + 1];
                 ordenado[j + 1] = ordenado[j];
+                ordenado[j] = aux;
+            }
+        }
+    }*/
+
+    // Bubble sort verificando de forma diferente
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i+ 1; j < size; j++)
+        {
+            if (ordenado[i] > ordenado[j])
+            {
+                aux = ordenado[i];
+                ordenado[i] = ordenado[j];
                 ordenado[j] = aux;
             }
         }
