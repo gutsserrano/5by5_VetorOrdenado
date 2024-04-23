@@ -1,30 +1,35 @@
 ﻿/* Faça um programa que leia 5 numeros guarde-os num vetor e ordene-os 
     de forma crescente em um novo vetor
 */
-
-int[] vetor =  new int[5];
-int[] ordenado = new int[5];
+int size = 20;
+int[] vetor =  new int[size];
+int[] ordenado = new int[size];
 int aux;
 int option;
 
 do
 {
-    Console.WriteLine("Digite 5 número:");
-    for (int i = 0; i < 5; i++)
+    for(int i = 0; i < size; i++)
+    {
+        vetor[i] = new Random().Next(0, 100);
+    }
+
+    /*Console.WriteLine("Digite size número:");
+    for (int i = 0; i < size; i++)
     {
         Console.Write($"Valor {i + 1}: ");
         vetor[i] = int.Parse(Console.ReadLine());
-    }
+    }*/
 
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < size; i++)
     {
         ordenado[i] = vetor[i];
     }
 
     // implementação de Bubble Sort
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < size; i++)
     {
-        for (int j = 0; j < 4; j++)
+        for (int j = 0; j < size - 1; j++)
         {
             if (ordenado[j] > ordenado[j + 1])
             {
@@ -36,13 +41,13 @@ do
     }
 
     Console.WriteLine("\nVetor lido:");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < size; i++)
     {
         Console.Write(vetor[i] + " ");
     }
 
     Console.WriteLine("\nVetor ordenado:");
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < size; i++)
     {
         Console.Write(ordenado[i] + " ");
     }
