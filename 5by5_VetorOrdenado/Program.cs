@@ -2,28 +2,46 @@
     de forma crescente em um novo vetor
 */
 int size = 20;
+int sizeOrdenado;
 int[] vetor =  new int[size];
 int[] ordenado = new int[size];
+int[] invertido;
+int[] repetidos = new int[size];
+bool achou;
 int aux;
 int option;
 
 do
 {
-    for(int i = 0; i < size; i++)
+    sizeOrdenado = 0;
+
+    for (int i = 0; i < size; i++)
     {
+
         vetor[i] = new Random().Next(0, 100);
-    }
 
-    /*Console.WriteLine("Digite size número:");
-    for (int i = 0; i < size; i++)
-    {
-        Console.Write($"Valor {i + 1}: ");
-        vetor[i] = int.Parse(Console.ReadLine());
-    }*/
+        if (i == 0)
+        {
+            ordenado[sizeOrdenado] = vetor[i];
+            sizeOrdenado++;
+        }
+        else
+        {
+            achou = false;
+            for (int j = 0; j < sizeOrdenado; j++)
+            {
+                if (ordenado[j] == vetor[i])
+                {
+                    achou = true;
+                }
+            }
 
-    for (int i = 0; i < size; i++)
-    {
-        ordenado[i] = vetor[i];
+            if (achou == false)
+            {
+                ordenado[sizeOrdenado] = vetor[i];
+                sizeOrdenado++;
+            }
+        }
     }
 
     // implementação de Bubble Sort
@@ -41,9 +59,9 @@ do
     }*/
 
     // Bubble sort verificando de forma diferente
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < sizeOrdenado; i++)
     {
-        for (int j = i+ 1; j < size; j++)
+        for (int j = i+ 1; j < sizeOrdenado; j++)
         {
             if (ordenado[i] > ordenado[j])
             {
@@ -54,6 +72,14 @@ do
         }
     }
 
+    invertido = new int[sizeOrdenado];
+    int x = 0;
+    for(int i = sizeOrdenado-1; i >= 0; i--)
+    {
+        invertido[x] = ordenado[i];
+        x++;
+    }
+
     Console.WriteLine("\nVetor lido:");
     for (int i = 0; i < size; i++)
     {
@@ -61,9 +87,15 @@ do
     }
 
     Console.WriteLine("\nVetor ordenado:");
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < sizeOrdenado; i++)
     {
         Console.Write(ordenado[i] + " ");
+    }
+
+    Console.WriteLine("\nVetor invertido:");
+    for (int i = 0; i < sizeOrdenado; i++)
+    {
+        Console.Write(invertido[i] + " ");
     }
 
     do
