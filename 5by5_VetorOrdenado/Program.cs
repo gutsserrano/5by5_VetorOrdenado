@@ -6,7 +6,6 @@ int sizeOrdenado;
 int[] vetor =  new int[size];
 int[] ordenado = new int[size];
 int[] invertido;
-int[] repetidos = new int[size];
 bool achou;
 int aux;
 int option;
