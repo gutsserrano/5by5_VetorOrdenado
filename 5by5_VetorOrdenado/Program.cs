@@ -1,6 +1,10 @@
-﻿/* Faça um programa que leia 5 numeros guarde-os num vetor e ordene-os 
-    de forma crescente em um novo vetor
+﻿/*Faça um programa que leia 5 ou mais numeros(a escolha) numeros e guarde-os em um vetor e, faça as operações:
+
+   a) Crie um novo vetor a partir do vetor original que esta ordenado e sem repetidos
+   b) Crie um terceiro vetor a partir do segundo vetor e ordene ele ao contrario
+   c) Não modifique o vetor original
 */
+
 int size = 20;
 int sizeOrdenado;
 int[] vetor =  new int[size];
